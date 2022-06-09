@@ -24,7 +24,9 @@ The loan qualifier is a command line interface (CLI) application. In order to or
 
 * A command line application such as Git Bash for Windows or Terminal for Mac.
 
-* Fire and Questionary libraries
+* Fire
+
+* Questionary
 
 In this section, you should include detailed installation notes containing code blocks and screenshots.
 

@@ -8,10 +8,11 @@ Example:
 """
 import sys
 import fire
+from hamcrest import none
 import questionary
 from pathlib import Path
 
-from qualifier.utils.fileio import load_csv
+from qualifier.utils.fileio import load_csv, save_csv
 
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
@@ -109,7 +110,17 @@ def save_qualifying_loans(qualifying_loans):
         qualifying_loans (list of lists): The qualifying bank loans.
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
-    # YOUR CODE HERE!
+    save_list = questionary.text("Would you like to save your list of qualifying loans?").ask()
+    
+    if save_list == "yes":
+        csvpath = Path("qualifying_loans.csv")
+        save_csv(csvpath, qualifying_loans)
+
+    elif save_list == "no":
+        print("Your qualifying loans have not been saved.")
+
+    else:
+        print("This is not a valid response. Please enter yes or no.") 
 
 
 def run():
