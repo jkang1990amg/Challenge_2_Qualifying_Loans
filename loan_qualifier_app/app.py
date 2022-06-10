@@ -14,10 +14,15 @@ from pathlib import Path
 
 from qualifier.utils.fileio import load_csv, save_csv
 
+"""Imports csv load and save function from fileio.py module file."""
+
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
     calculate_loan_to_value_ratio,
 )
+
+"""Imports the monthly_debt_ratio and loan_to_value_ratio calculations from
+the calculators modules file."""
 
 from qualifier.filters.max_loan_size import filter_max_loan_size
 from qualifier.filters.credit_score import filter_credit_score
@@ -110,17 +115,17 @@ def save_qualifying_loans(qualifying_loans):
         qualifying_loans (list of lists): The qualifying bank loans.
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
-    save_list = questionary.text("Would you like to save your list of qualifying loans?").ask()
+
+    """Save_csv function is being pulled from fileio.py file under utils folder."""
+    save_list = questionary.confirm("Would you like to save your list of qualifying loans?").ask()
     
-    if save_list == "yes":
+    if save_list == True:
         csvpath = Path("qualifying_loans.csv")
         save_csv(csvpath, qualifying_loans)
+        print("Your qualifying loans have been saved.")
 
-    elif save_list == "no":
+    elif save_list == False:
         print("Your qualifying loans have not been saved.")
-
-    else:
-        print("This is not a valid response. Please enter yes or no.") 
 
 
 def run():
