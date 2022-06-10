@@ -31,15 +31,3 @@
    31  python app.py
    32  python app.py
    33  history 50 > terminal_history.txt
-   34  cd ~/OneDrive/Desktop/Challenge_2_Qualifying_Loans/Challenge_2_Qualifying_Loans/loan_qualifier_app/
-   35  conda commit -m "Updates the app.py and readme.md files to the final completed versions."
-   36  git status
-   37  git add
-   38  git add loan_qualifier_app/
-   39  cd ~/OneDrive/Desktop/Challenge_2_Qualifying_Loans/Challenge_2_Qualifying_Loans
-   40  git commit -m "Updates the app.py and readme.md files to the final completed versions."
-   41  git add
-   42  git add loan_qualifier_app/
-   43  git commit -m "Updates the app.py and readme.md files to the final completed versions."
-   44  git push
-   45  history 50 > terminal_history.txt
